@@ -5,7 +5,7 @@ exports.asyncAnswers = {
 
     let result;
 
-    let firstPromise = new Promise((resolve) => {
+    let firstPromise = new Promise((resolve, reject) => {
       
       setTimeout(() => {
 
@@ -21,9 +21,9 @@ exports.asyncAnswers = {
 
   manipulateRemoteData: function(url) {
 
-    let request = new XMLHttpRequest();
-
     let arr2 = [];
+
+    let request = new XMLHttpRequest();
     
     request.open('GET', url);
 
@@ -37,17 +37,17 @@ exports.asyncAnswers = {
 
       for (let i = 0; i < elements.people.length; i++) {
 
-      let result = elements.people[i].name;
+        let result = elements.people[i].name;
 
-      arr2.push(result);
+        arr2.push(result);
 
-      }
+        }
 
       arr2.sort();
 
       console.log(arr2);
 
-      return arr2;
+      //return arr2;
 
     }
 
