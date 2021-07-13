@@ -144,13 +144,51 @@ if (Array.prototype.indexOf(2)) {
 
   },
 
+
+
+
   duplicates: function(arr) {
 
+let arr2 = [];
+
+let filters = arr.sort();
+
+for (let i = 0; i < filters.length; i++) {
+
+if (filters[i++] === filters[i]) {
+
+  arr2.push(filters[i]);
+
+  }
+
+}
+
+return arr2;
+
   },
+
+
+
 
   square: function(arr) {
 
+    let arr2 = [];
+
+    for (let i = 0; i < arr.length; i++) {
+     
+      let result = Math.pow(arr[i], 2);
+
+      arr2.push(result);
+
+    }
+
+  return arr2;
+
   },
+
+
+
+  
 
   findAllOccurrences: function(arr, target) {
 
