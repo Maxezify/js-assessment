@@ -39,11 +39,17 @@ if (Array.prototype.indexOf(2)) {
 
   remove: function(arr, item) {
 
-    let remove = arr.length;
+    let plus = 0;
 
     for (let i = 0; i < arr.length; i++) {
-  
-    arr.splice(i, remove);
+
+      if (arr[i] != item) {
+
+        plus++;
+
+      }
+
+      arr.splice(arr[i], plus);
   
     }
   
