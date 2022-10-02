@@ -3,7 +3,7 @@ exports = typeof window === 'undefined' ? global : window;
 exports.numbersAnswers = {
   valueAtBit: function(num, bit) {
 
-  return
+  return 1 & (num >> (bit - 1));
 
   },
 
@@ -19,5 +19,6 @@ exports.numbersAnswers = {
 
   multiply: function(a, b) {
 
+   
   }
 };
