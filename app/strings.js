@@ -1,28 +1,14 @@
-exports = typeof window === 'undefined' ? global : window;
+exports = typeof window === "undefined" ? global : window;
 
 exports.stringsAnswers = {
-  reduceString: function(str, amount) {
-
-  return str.split('').filter(suppAmount()).join('');  
-
-  function suppAmount(element) {
-
-    if (element > amount) {
-
-      element.pop();
-
-    }
-  }
-
+  reduceString: function (str, amount) {
+    let regex = new RegExp("(.)(?=\\1{" + amount + "})", "g");
+    return str.replace(regex, "");
   },
 
-  wordWrap: function(str, cols) {
+  wordWrap: function (str, cols) {},
 
+  reverseString: function (str) {
+    return str.split("").reverse().join("");
   },
-
-  reverseString: function(str) {
-
-    return str.split('').reverse().join('');
-
-  }
 };
