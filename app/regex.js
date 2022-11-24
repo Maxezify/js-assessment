@@ -13,9 +13,21 @@ exports.regexAnswers = {
     return /([aeiouAEIOU])$/.test(str);
   },
 
-  captureThreeNumbers: function (str) {},
+  captureThreeNumbers: function (str) {
+    let numberRegex = str.match(/\d{3}/);
 
-  matchesPattern: function (str) {},
+    if (numberRegex) {
+      return numberRegex[0];
+    } else {
+      return false;
+    }
+  },
 
-  isUSD: function (str) {},
+  matchesPattern: function (str) {
+    return /^\d{3}-\d{3}-\d{4}$/.test(str);
+  },
+
+  isUSD: function (str) {
+    return /^\$\d{1,3}(,?\d{3})*(\.\d{2})?$/.test(str);
+  },
 };
